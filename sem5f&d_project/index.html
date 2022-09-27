@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" href="index.css" />
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css'>  </head>
+  <body>
+    <nav class="navbar">
+      <div class="img"><h2 lang="hi">दुकान</h2></div>
+      <div class="input">
+        <input
+          type="text"
+          data-search
+          placeholder="Search by Name or Category"
+        />
+      </div>
+      <div class="cart">
+        <svg
+          :data-src="`https://s2.svgbox.net/hero-outline.svg?ic=${item.name}`"
+          :data-icon="item.name"
+          data-set="hero-outline"
+          data-loading="lazy"
+          width="32px"
+          height="32px"
+          data-src="https://s2.svgbox.net/hero-outline.svg?ic=shopping-cart"
+          data-icon="shopping-cart"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          color=""
+          data-id="svg-loader_42"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+          ></path>
+        </svg>
+        <span class="data-cart-count"></span>
+      </div>
+    </nav>
+    <div class="side-menu" data-cart-menu>
+      <center><h1>YOUR CART</h1></center>
+      <hr>
+      <br>
+      <h1>Your Total: </h1>
+      <h1 class="total_amt"></h1>
+      <button class="btn btn-purchase">Purchase</button>
+      <button class="btn remove-product">Remove All</button>
+      <hr>
+      <br>
+      <div class="cart_item_container"></div>
+    </div>
+
+    <div class="container" data-product-container></div>
+
+    <template data-product-template>
+      <div class="card">
+        <img data-img class="cartplus" src="" alt="" height="70%" />
+        <div class="card-header">
+          <h4 class="card-title" data-name></h4>
+          <p class="card-price" data-price></p><span class="card-discount" data-card-discount></span>
+        </div>
+        <div class="rating_div">
+          <i class="fi fi-ss-star-octogram"></i><span data-rating></span>
+        </div>
+        <div class="description_carticon">
+          <p data-description></p>
+          <button class="add-button" data-add-button>Add to Cart</button>
+        </div>
+      </div>
+    </template>
+
+    <!--template 2-->
+
+    <template data-cart-template>
+      <div class="cart_item" data-cart-item>
+        <img class="cart-item-image" src="" alt="" />
+        <div class="cart_item_description" cart-item-description>
+          <p class="cart_item_title" cart-name></p>
+          <br>
+          <p class="cart_item_price" cart-price></p>
+        </div>
+        
+        <div class="cart_item_counter">
+          
+          <button class="minus_item_button"><i class="fi fi-rr-caret-down"></i>
+          </button>
+          <p class="cart_item_count" data-product-count>1</p>
+          <button class="plus_item_button"><i class="fi fi-rr-caret-up"></i>
+          </button>
+
+        </div>
+      </div>
+
+    </template>
+
+
+
+    <script src="index.js"></script>
+  </body>
+</html>
